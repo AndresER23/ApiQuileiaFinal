@@ -43,8 +43,10 @@ public class MenuController {
 	 */
 	@PostMapping
 	public ResponseEntity<MenuDTO> create(@RequestBody MenuDTO menuDTO) {
+		Menu savedMenu;
 		try {
-			menuService.save(menuDTO);
+			savedMenu = menuService.save(menuDTO);
+			menuDTO.setIdMenu(savedMenu.getIdMenu());
 		} catch (NotFoundException e) {
 			log.error("The restaurant to which want to associate the menu couldn't be found " + e);
 			return ResponseEntity.notFound().build();

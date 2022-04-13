@@ -49,6 +49,7 @@ public class MenuServiceImpl implements MenuService {
 		}
 		
 		Menu menu= new Menu();
+		menu.setIdMenu(menuDTO.getIdMenu());
 		menu.setMenuName(menuDTO.getMenuName());
 		menu.setPrice(menuDTO.getPrice());
 		menu.setTypeMenu(menuDTO.getTypeMenu());

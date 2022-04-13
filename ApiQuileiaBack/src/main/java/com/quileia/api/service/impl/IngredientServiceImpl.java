@@ -65,6 +65,7 @@ public class IngredientServiceImpl implements IngredientService {
 		Menu menu = retrievedMenu.get();
 		
 		Ingredient ingredient = new Ingredient();
+		ingredient.setIdIngredient(newIngredient.getIdIngredient());
 		ingredient.setIngredientName(newIngredient.getIngredientName());
 		ingredient.setCalories(newIngredient.getCalories());
 		ingredient.setMenu(menu);
@@ -73,7 +74,8 @@ public class IngredientServiceImpl implements IngredientService {
 			throw new ExceededCaloriesException("The calories quantity is exceeded");
 		}
 		
-		ingredientRepository.save(ingredient);
+		Ingredient savedIngredient= ingredientRepository.save(ingredient);
+		newIngredient.setIdIngredient(savedIngredient.getIdIngredient());
 		return newIngredient;
 	}
 

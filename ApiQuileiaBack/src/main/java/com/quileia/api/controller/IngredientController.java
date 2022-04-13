@@ -46,8 +46,10 @@ public class IngredientController {
 	 */
 	@PostMapping
 	public ResponseEntity<IngredientDTO> create(@RequestBody IngredientDTO ingredientDTO) {
+		IngredientDTO savedIngredient;
 		try {
-			ingredientService.save(ingredientDTO);
+			savedIngredient= ingredientService.save(ingredientDTO);
+			ingredientDTO.setIdIngredient(savedIngredient.getIdIngredient());
 			return ResponseEntity.status(HttpStatus.CREATED).body(ingredientDTO);
 		} catch (ExceededCaloriesException | NotFoundException e) {
 			log.error( "it was not possible to create a new ingredient,"
@@ -110,7 +112,6 @@ public class IngredientController {
 			log.error("The ingredient to be updated could not be found");
 			return ResponseEntity.notFound().build();
 		}
-		
 		return ResponseEntity.status(HttpStatus.CREATED).body(ingredientService.save(ingredientDTO));
 	}
 

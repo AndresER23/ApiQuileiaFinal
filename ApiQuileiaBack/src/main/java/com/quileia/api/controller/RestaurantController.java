@@ -50,7 +50,7 @@ public class RestaurantController {
 		newRestaurant.setTypeOfRestaurant(restaurant.getTypeOfRestaurant());
 		newRestaurant.setOpeningTime(restaurant.getOpeningTime());
 		newRestaurant.setClosingTime(restaurant.getClosingTime());
-		//restaurantService.save(newRestaurant);
+		restaurantService.save(newRestaurant);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(restaurant);
 	}
