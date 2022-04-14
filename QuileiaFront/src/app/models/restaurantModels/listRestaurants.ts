@@ -8,4 +8,5 @@ export interface ListRestaurantsI{
     locationCity : String
     openingTime : number
     closingTime : number
+    menuList : any
 }

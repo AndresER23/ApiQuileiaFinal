@@ -1,20 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../../../services/api.service';
-import {ListRestaurantsI} from '../../../models/restaurantModels/listRestaurants'
+import { ApiService } from '../../../services/api.service';
+import { ListRestaurantsI } from '../../../models/restaurantModels/listRestaurants';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
 })
 export class ListOfRestaurants implements OnInit {
+  public allRestaurants: ListRestaurantsI[] = [];
+  
+  
 
-  constructor(private apiServ: ApiService) { }
+  constructor(private apiServ: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-       this.apiServ.getAllRestaurants().subscribe(data=>{
-         console.log(data)
-       })
-      
+    this.apiServ.getAllRestaurants().subscribe((data) => {
+      this.allRestaurants = data;
+      console.log(data)
+    });
   }
 
+  viewRestaurant(idRes: number) {
+    this.router.navigate([`consult/${idRes}`]);
+  }
 }

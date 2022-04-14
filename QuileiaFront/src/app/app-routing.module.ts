@@ -7,7 +7,7 @@ import { ListOfMenu } from './views/menu/list/list.component';
 import {CreateRestaurant} from './views/restaurants/createRestaurant/create.component'
 import { EditRestaurant } from './views/restaurants/edit/edit.component';
 import { ListOfRestaurants } from './views/restaurants/list/list.component';
-
+import {ConsultComponent} from './views/restaurants/consult/consult.component'; 
 const routes: Routes = [
   {path:'', redirectTo:'initialPage', pathMatch:'full'},
   {path:'initialPage', component:InitialComponent},
@@ -16,7 +16,8 @@ const routes: Routes = [
   {path:'restaurant/create', component:CreateRestaurant},
   {path:'restaurant/edit', component:EditRestaurant},
   {path:'restaurant/list', component:ListOfRestaurants},
-  {path:'menu/list' , component:ListOfMenu}
+  {path:'menu/list' , component:ListOfMenu},
+  {path:'consult/:id', component:ConsultComponent}
 ];
 
 @NgModule({

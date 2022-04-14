@@ -1,1 +1,37 @@
-<p>list works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+<app-header></app-header>
+
+<div class="container">
+<button class="crear" type="button" class="btn btn-success">Crear</button>
+<h1>List of restauraurants</h1>
+<button class="editar" type="button"class="btn btn-info">Editar</button>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Social Reason</th>
+        <th scope="col">Type Of Restaurant</th>
+        <th scope="col">Opening Time</th>
+        <th scope="col">Closing Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let rest of allRestaurants" (click)="viewRestaurant(rest.idRestaurant)">
+        <td>{{rest.idRestaurant}}</td>
+        <td>{{rest.commercialName}}</td>
+        <td>{{rest.locationCity}}</td>
+        <td>{{rest.socialReason}}</td>
+        <td>{{rest.typeOfRestaurant}}</td>
+        <td>{{rest.openingTime}}</td>
+        <td>{{rest.closingTime}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
+

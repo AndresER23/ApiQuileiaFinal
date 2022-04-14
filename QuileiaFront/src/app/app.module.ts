@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { ListOfMenu } from './views/menu/list/list.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { ConsultComponent } from './views/restaurants/consult/consult.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     routingModule,
-    ListOfMenu
+    ListOfMenu,
+    ConsultComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

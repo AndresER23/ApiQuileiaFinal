@@ -1,0 +1,44 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+<app-header></app-header>
+<div class="container">
+  <div class="header">
+    <h1>{{recoveredRestaurant.commercialName}}</h1>
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Entradas</th>
+        <th scope="col">Platos Fuertes</th>
+        <th scope="col">Postres</th>
+        <th scope="col">Bebidas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let menu of recoveredRestaurant.menuList ; index as i" (click)="showMenu()">
+        <th scope="row">{{i+1}}</th>
+        <td>
+          <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 1">
+            {{menu.menuName}}
+          </div>
+        </td>
+        <td>
+          <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 2">
+            {{menu.menuName}}
+          </div>
+        </td>
+        <td>
+          <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 3">
+            {{menu.menuName}}
+          </div>
+        </td>
+        <td>
+          <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 4">
+            {{menu.menuName}}
+          </div>
+        </td>
+      </tr>
+<app-footer></app-footer>
