@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../services/api.service';
+import { ApiService } from '../../../services/resturantServices/api.service';
 import { ListRestaurantsI } from '../../../models/restaurantModels/listRestaurants';
 import { Router } from '@angular/router';
 
@@ -23,6 +23,15 @@ export class ListOfRestaurants implements OnInit {
   }
 
   viewRestaurant(idRes: number) {
-    this.router.navigate([`consult/${idRes}`]);
+    this.router.navigate([`restaurant/consult/${idRes}`]);
   }
+
+  createRestaurant(){
+    this.router.navigate(['restaurant/create']);
+  }
+  
+  editRestaurant(idRes: number){
+    this.router.navigate([`restaurant/edit/${idRes}`]);
+  }
+
 }

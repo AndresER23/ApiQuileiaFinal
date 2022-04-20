@@ -63,36 +63,11 @@ h2.heading{
 		padding: 12px 0;
 	}
 
-	.bottonSend{
-		background: rgb(119, 190, 141) !important;
-		color: white !important;
-
-	}
-
     .bottonSend:hover{
-        background: rgb(71, 185, 107) !important;
+        background: rgb(118, 165, 133) !important;
         color: rgb(254, 254, 254) !important;
     }
 
-	.bottonDelete{
-		background: rgb(219, 84, 74) !important;
-		color: white !important;
-		padding: 12px;
-		font-size: 14px;
-		border: 1px solid;
-		width: 100%;
-		margin-bottom: 18px;
-		color: #888;
-		font-family: 'Lato', 'sans-serif';
-		font-size: 16px;
-		font-weight: 300;
-		margin-left: 80px;
-	}
-
-	.bottonDelete:hover{
-		background: rgb(232, 45, 31) !important;
-		color: rgb(240, 240, 240) !important;
-	}
 
 
 

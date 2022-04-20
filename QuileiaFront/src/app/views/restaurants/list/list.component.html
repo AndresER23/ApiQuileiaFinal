@@ -5,9 +5,11 @@
 <app-header></app-header>
 
 <div class="container">
-<button class="crear" type="button" class="btn btn-success">Crear</button>
+
 <h1>List of restauraurants</h1>
-<button class="editar" type="button"class="btn btn-info">Editar</button>
+<button type="button" class="btn btn-success create" (click)="createRestaurant()">Create</button>
+<br/>
+<br/>
 <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -21,17 +23,28 @@
       </tr>
     </thead>
     <tbody>
-      <tr  *ngFor="let rest of allRestaurants" (click)="viewRestaurant(rest.idRestaurant)">
-        <td>{{rest.idRestaurant}}</td>
+      <tr  *ngFor="let rest of allRestaurants; let i= index" (click)="viewRestaurant(rest.idRestaurant)">
+        <td>{{i + 1}}</td>
         <td>{{rest.commercialName}}</td>
         <td>{{rest.locationCity}}</td>
         <td>{{rest.socialReason}}</td>
-        <td>{{rest.typeOfRestaurant}}</td>
+        <td *ngIf="rest.typeOfRestaurant == 1">Vegan</td>
+        <td *ngIf="rest.typeOfRestaurant == 2">Vegetarian</td>
+        <td *ngIf="rest.typeOfRestaurant == 3">Read Meats</td>
+        <td *ngIf="rest.typeOfRestaurant == 4">Birds</td>
         <td>{{rest.openingTime}}</td>
         <td>{{rest.closingTime}}</td>
+        <td>  <button type="button" class="btn btn-warning edit" (click)="editRestaurant(rest.idRestaurant)">
+          Edit
+        </button>
+      </td>
       </tr>
     </tbody>
   </table>
+  <br/>
+  
 </div>
+
+
 <app-footer></app-footer>
 

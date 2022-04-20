@@ -14,7 +14,7 @@ import { ListOfMenu } from './views/menu/list/list.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import { ConsultComponent } from './views/restaurants/consult/consult.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -30,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

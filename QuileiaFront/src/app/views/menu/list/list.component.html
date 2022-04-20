@@ -1,1 +1,42 @@
-<p>list of menus works!</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+<app-header></app-header>
+
+<div class="container">
+
+<h1>List of Menus</h1>
+<button type="button" class="btn btn-success create" (click)="createMenu()">Create</button>
+<br/>
+<br/>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type of menu</th>
+        <th scope="col">Price</th>
+        <th scope="col">Total Calories</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let menu of recoveredMenus; let i= index" (click)="editMenu(menu.idMenu)">
+        <td>{{i + 1}}</td>
+        <td>{{menu.menuName}}</td>
+        <td *ngIf="menu.typeMenu == 1">Vegan</td>
+        <td *ngIf="menu.typeMenu == 2">Vegetarian</td>
+        <td *ngIf="menu.typeMenu == 3">Read Meats</td>
+        <td *ngIf="menu.typeMenu == 4">Birds</td>
+        <td>${{menu.price}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  
+</div>
+
+
+<app-footer></app-footer>
+

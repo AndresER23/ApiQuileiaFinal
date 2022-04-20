@@ -1,12 +1,22 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+  rel="stylesheet"
+/>
 
 <app-header></app-header>
 <div class="container">
   <div class="header">
-    <h1>{{recoveredRestaurant.commercialName}}</h1>
+    <h1>{{ recoveredRestaurant.commercialName }}</h1>
   </div>
+<div class="button-father">
+  <div class="button-son">
+    <button type="buttonAddMenu" class="btn btn-primary add" (click)="addNewMenu()">
+      Add Menu
+    </button>
+  </div>
+</div>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -18,27 +28,34 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let menu of recoveredRestaurant.menuList ; index as i" (click)="showMenu()">
-        <th scope="row">{{i+1}}</th>
+      <tr
+        *ngFor="let menu of recoveredRestaurant.menuList; index as i"
+        (click)="showMenu()"
+      >
+        <th scope="row">{{ i + 1 }}</th>
         <td>
           <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 1">
-            {{menu.menuName}}
+            {{ menu.menuName }}
           </div>
         </td>
         <td>
           <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 2">
-            {{menu.menuName}}
+            {{ menu.menuName }}
           </div>
         </td>
         <td>
           <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 3">
-            {{menu.menuName}}
+            {{ menu.menuName }}
           </div>
         </td>
         <td>
           <div *ngIf="recoveredRestaurant.menuList[i].typeMenu == 4">
-            {{menu.menuName}}
+            {{ menu.menuName }}
           </div>
         </td>
       </tr>
+    </tbody>
+  </table>
+  
+</div>
 <app-footer></app-footer>

@@ -1,5 +1,3 @@
-import { NgIf } from "@angular/common"
-
 export interface ListRestaurantsI{
     idRestaurant: number
     commercialName: String

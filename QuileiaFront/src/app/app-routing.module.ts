@@ -4,20 +4,22 @@ import {InitialComponent} from './views/initial/initial.component';
 import{CreateComponent} from './views/menu/create/create.component';
 import { EditComponent } from './views/menu/edit/edit.component';
 import { ListOfMenu } from './views/menu/list/list.component';
-import {CreateRestaurant} from './views/restaurants/createRestaurant/create.component'
+import {CreateRestaurant} from './views/restaurants/create/create.component'
 import { EditRestaurant } from './views/restaurants/edit/edit.component';
 import { ListOfRestaurants } from './views/restaurants/list/list.component';
 import {ConsultComponent} from './views/restaurants/consult/consult.component'; 
+
 const routes: Routes = [
   {path:'', redirectTo:'initialPage', pathMatch:'full'},
   {path:'initialPage', component:InitialComponent},
   {path:'menu/create', component:CreateComponent},
-  {path:'menu/edit', component:EditComponent },
+  {path:'menu/edit/:id', component:EditComponent },
   {path:'restaurant/create', component:CreateRestaurant},
-  {path:'restaurant/edit', component:EditRestaurant},
+  {path:'restaurant/edit/:id', component:EditRestaurant},
   {path:'restaurant/list', component:ListOfRestaurants},
   {path:'menu/list' , component:ListOfMenu},
-  {path:'consult/:id', component:ConsultComponent}
+  {path:'restaurant/consult/:id', component:ConsultComponent},
+  {path:'menu/consult/:id' , component: ConsultComponent}
 ];
 
 @NgModule({

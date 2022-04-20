@@ -1,1 +1,76 @@
-<p>edit works!</p>
+<app-header></app-header>
+<br/>
+<div class="controls">
+  <button class="bottonDelete" (click)="deleteRestaurant()">Delete</button>
+</div>
+<form
+  [formGroup]="editRestaurant"
+  (ngSubmit)="getValuesForm(editRestaurant.value)"
+>
+  <!--  General -->
+  <div class="form-group">
+    <h2 class="heading">Data of the new Restaurant</h2>
+    <div class="controls">
+      <input
+        type="text"
+        id="name"
+        class="floatLabel"
+        formControlName="comercialName"
+        ngModel="{{recoveredRestaurant.commercialName}}"
+      />
+    </div>
+    <div class="controls">
+      <input
+        type="text"
+        id="email"
+        class="floatLabel"
+        formControlName="socialReason"
+        ngModel="{{recoveredRestaurant.socialReason}}"
+      />
+    </div>
+    <app-footer></app-footer>
+
+    <label for="fruit" class="controls">Type Of Restaurant</label>
+    <br />
+    <div class="controls">
+      <i class="fa fa-sort"></i>
+      <select formControlName="typeOfRestaurant">
+        <option value="{{recoveredRestaurant.typeOfRestaurant" selected></option>
+        <option value="1">Vegan</option>
+        <option value="2">Vegetarian</option>
+        <option value="3">Read Meats</option>
+        <option value="4">Birds</option>
+      </select>
+    </div>
+    <div class="controls">
+      <input
+        type="text"
+        id="locationCity"
+        class="floatLabel"
+        formControlName="locationCity"
+        ngModel="{{recoveredRestaurant.locationCity}}"
+      />
+    </div>
+    <div class="controls">
+      <input
+        type="number"
+        id="name"
+        class="floatLabel"
+        formControlName="openingTime"
+        ngModel="{{recoveredRestaurant.openingTime}}"
+      />
+    </div>
+    <div class="controls">
+      <input
+        type="number"
+        id="name"
+        class="floatLabel"
+        formControlName="closingTime"
+        ngModel="{{recoveredRestaurant.closingTime}}"
+      />
+    </div>
+  </div>
+  <div class="controls">
+    <button class="bottonSend">Submit</button>
+  </div>
+</form>

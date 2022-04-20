@@ -2,7 +2,7 @@ h1{
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     margin: 10px 0; 
-    color:rgb(176, 166, 237);
+    color:rgb(149, 134, 250);
 }
 
 th{
@@ -13,3 +13,18 @@ td{
     font-family: 'Quicksand', sans-serif;
 }
 
+.edit{
+    width: 49%;
+    
+}
+
+.add{
+    width: 49%;
+    margin: 10px;
+}
+
+.button-son{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}

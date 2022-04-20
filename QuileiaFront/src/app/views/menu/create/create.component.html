@@ -1,1 +1,57 @@
-<p>create menu works!</p>
+<app-header></app-header>
+<form
+  [formGroup]="createNewMenu"
+  (ngSubmit)="getValuesForm(createNewMenu.value)"
+>
+  <!--  General -->
+  <div class="form-group">
+    <h2 class="heading">Data of the new Menu</h2>
+    <div class="controls">
+      <input
+        type="text"
+        id="name"
+        class="floatLabel"
+        formControlName="menuName"
+        placeholder="Menu Name"
+      />
+    </div>
+    <div class="controls">
+      <input
+        type="number"
+        id="email"
+        class="price"
+        formControlName="price"
+        placeholder="Price"
+      />
+    </div>
+    <label for="fruit" class="label">
+        Type of Menu
+      </label>
+    <div class="controls">
+        <i class="fa fa-sort"></i>
+        <select formControlName="typeMenu">
+          <option value="1">Appetizer</option>
+          <option value="2">Main course</option>
+          <option value="3">Desserts</option>
+          <option value="4">Beverages</option>
+        </select>
+      </div>
+    <label for="fruit" class="label">
+      Restaurant to which the menu will be associated
+    </label>
+    <br />
+    <div class="controls">
+      <i class="fa fa-sort"></i>
+      <select
+        formControlName="idRestaurant" 
+      >
+        <option *ngFor="let rest of recoveredRestaurants; let i = index" value="{{ rest.idRestaurant }}">
+          {{ rest.commercialName }}
+        </option>
+      </select>
+    </div>
+    <div class="controls">
+        <button class="bottonSend">Submit</button>
+    </div>
+  </div>
+</form>

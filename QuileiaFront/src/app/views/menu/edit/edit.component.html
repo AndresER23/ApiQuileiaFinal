@@ -1,1 +1,58 @@
-<p>edit menu works!</p>
+<app-header></app-header>
+<br />
+<form [formGroup]="editMenu" (ngSubmit)="getValuesForm(editMenu.value)">
+  <!--  General -->
+  <div class="form-group">
+    <h2 class="heading">Edit the menu</h2>
+    <div class="controls">
+      <input
+        type="text"
+        id="name"
+        class="floatLabel"
+        formControlName="menuName"
+        ngModel="{{ recoveredMenu.menuName }}"
+      />
+    </div>
+    <div class="controls">
+      <input
+        type="text"
+        id="email"
+        class="floatLabel"
+        formControlName="price"
+        ngModel="{{ recoveredMenu.price }}"
+      />
+    </div>
+    <label class="controls">Type Of Menu</label>
+    <br />
+    <div class="controls">
+      <i class="fa fa-sort"></i>
+      <select formControlName="typeMenu">
+        <option value="{{ recoveredMenu.typeMenu }}" selected></option>
+        <option value="1">Appetizer</option>
+        <option value="2">Main course</option>
+        <option value="3">Desserts</option>
+        <option value="4">Beverages</option>
+      </select>
+    </div>
+    <div class="controls">
+      <i class="fa fa-sort"></i>
+      <select formControlName="idRestaurant">
+        <option value="{{ associatedRestuarant.idRestaurant }}" selected>
+          {{ associatedRestuarant.comercialName }}
+        </option>
+        <option
+          *ngFor="let rest of recoveredRestaurants; let i = index"
+          value="{{ rest.idRestaurant }}"
+        >
+          {{ rest.commercialName }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="controls">
+    <button class="bottonSend">Submit</button>
+  </div>
+</form>
+<button class="bottonDelete container" (click)="deleteMenu()">Delete</button>
+
+
